@@ -42,9 +42,20 @@ public class GameTest {
 		game.roll(2);
 		game.roll(8);
 		game.roll(7);
-		rollAndPins(0,17);  
+		rollAndPins(0,17);
+		result=game.score();
 	    
-		assertEquals(24,game.score());
+		assertEquals(24,result);
+	}
+	@Test
+	public void GetAStrikeWhitRollsOfTenAndFourAndThreeShoulBeTwentyFour() { // Test de un Spare que para entendera tenemos que mirar el main
+		game.roll(10);
+		game.roll(4);
+		game.roll(3);
+		rollAndPins(0,16);
+		result=game.score();
+	    
+		assertEquals(24,result);
 	}
 	private void rollAndPins(int pins,int rolls) {  //Un metodo privado dentro de la clase test para colocar la cantidad
 		                                            // de pinos y tiros y que me ayudara a hacer un refactor para las otras pruebas
