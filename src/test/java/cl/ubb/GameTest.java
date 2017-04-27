@@ -27,11 +27,19 @@ public class GameTest {
 	}
 	@Test
 	public void GetInAllFramesScoreZero() { //Tener puntacion cero en todos los rolls
-		for (int i =0; i<20;i++) {
+		for (int i =0; i<20;i++) { // Un for que sirve para contar el juego completo
 			game.roll(0);
 			result=game.score();
 		}
 		assertEquals(0,result);
+	}
+	@Test
+	public void GetOneInAllRollsShoulbBeTwenty() { 
+		for (int i =0; i<20;i++) { // Un for que sirve para contar todos los frames
+			game.roll(1);
+			result=game.score();
+		}
+		assertEquals(20,result);
 	}
 	
 
